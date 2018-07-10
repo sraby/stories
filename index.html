@@ -12,6 +12,7 @@
 <!-- load code libraries -->
 <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
 <!-- <script src="lib/jquery.min.js"></script> -->
+<script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -29,21 +30,34 @@
   
 <div id="map"></div>
 
+<!-- name	textshort	textlong	lat	lng	photo1cap	photo1url	photo2cap	photo2url	photo3cap	photo3url	videocap	videourl	videoframe	audiocap	audiourl --> 
+
 <script type="infowindow/html" id="infowindow_template">
 	<div class="cartodb-popup v2">
 	  <a href="#close" class="cartodb-popup-close-button close">x</a>
 		  <div class="cartodb-popup-content-wrapper">
 		    <div class="cartodb-popup-content">
 		    	<h3> {{name}} </h3>
-		    	  <iframe src="{{videourl}}" width="300" height="250" frameborder="0" allowfullscreen webkitallowfullscreen msallowfullscreen></iframe> 
+		    	<p> {{textlong}} </p>
+		    	
+		    	  <div class="resp-container">
+    				<iframe class="resp-iframe" src="{{videourl}}" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
+					</div> 
 		    </div>
 		  </div>
 	  <div class="cartodb-popup-tip-container"></div>
 	</div>
 </script>
 
+<script type="infowindow/html" id="hover_template">
+	<div class="cartodb-tooltip-content-wrapper">
+		<div class="cartodb-tooltip-content">
+			<h3>{{name}}</h3>
+			<p>{{textshort}}</p>
+		</div>
+	</div>
+</script>
 
-<script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
 <script src="map.js"></script>
 
 </body>

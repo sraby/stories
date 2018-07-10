@@ -4,6 +4,7 @@ $(document).ready(function () {
                         shareable: false, 
                         search: true,
                         infowindow: true,
+                        tooltip: true,
                         loaderControl: false,
                         layer_selector: true,
                         detectRetina: true,
@@ -12,14 +13,33 @@ $(document).ready(function () {
                         zoom: 10
                     }).on('done', function(vis,layers) {
                         // Get the "native" Leaflet map and add a zoom control to it 
-                        vis.getNativeMap().addControl(L.control.zoom());
+                        var map = vis.getNativeMap();
+
+                        map.addControl(L.control.zoom());
+
                         var sublayer = layers[1].getSubLayer(1);
-                        sublayer.infowindow.set('template_type', 'mustache');
+                        sublayer.setInteraction(true);
+                        sublayer.setInteractivity('cartodb_id,name,textshort,textlong,lat,lng,photo1cap,photo1url,photo2cap,photo2url,photo3cap,photo3url,videocap,videourl,videoframe,audiocap,audiourl');
+
+                        //sublayer.infowindow.set('template_type', 'mustache');
                         sublayer.infowindow.set('sanitizeTemplate',false);
                         sublayer.infowindow.set('template', $('#infowindow_template').html());
-                        //var popupTemplate = '<div class="cartodb-popup v2"><a href="#close" class="cartodb-popup-close-button close">x</a> <div class="cartodb-popup-content-wrapper"><div class="cartodb-popup-content">{{name}}{{videoframe}}</div></div><div class="cartodb-popup-tip-container"></div> </div>';
-  
-                        }).on('error', function() {
+
+                        
+                        vis.addOverlay({
+                              type: 'tooltip',
+                              layer: sublayer,
+                              template: $('#hover_template').html(),
+                              position: 'top|right',
+                              fields: [{name: 'name', textshort: 'textshort'}]
+                            }); 
+
+                        sublayer.on('featureClick', function(e, latlng, pos, data, layerNumber) {
+                            map.panTo(latlng);
+                        })}).on('error', function() {
                     console.log("some error occurred");
-            });
+                });
 });
+
+
+
