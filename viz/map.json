@@ -1,0 +1,194 @@
+// http://uducla.carto.com/u/uducla/api/v2/viz/664b2ba5-b804-4fd8-b734-c813d78242de/viz.json
+
+vizjson({  
+   "id":"664b2ba5-b804-4fd8-b734-c813d78242de",
+   "version":"0.1.0",
+   "title":"prototype_data map",
+   "likes":0,
+   "description":null,
+   "scrollwheel":true,
+   "legends":true,
+   "url":null,
+   "map_provider":"leaflet",
+   "bounds":[  
+      [  
+         33.7824,
+         -118.165
+      ],
+      [  
+         33.7824,
+         -118.165
+      ]
+   ],
+   "center":"[33.782391,-118.16484]",
+   "zoom":3,
+   "updated_at":"2018-07-09T21:33:28+00:00",
+   "layers":[  
+      {  
+         "options":{  
+            "type":"Tiled",
+            "category":"CARTO",
+            "urlTemplate":"https://{s}.basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}.png",
+            "urlTemplate2x":"https://{s}.basemaps.cartocdn.com/rastertiles/light_nolabels/{z}/{x}/{y}@2x.png",
+            "subdomains":"abcd",
+            "minZoom":"0",
+            "maxZoom":"18",
+            "name":"Positron",
+            "className":"positron_rainbow_labels",
+            "attribution":"&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors",
+            "selected":true,
+            "val":"positron_rainbow_labels",
+            "label":"Positron",
+            "default":false,
+            "highlighted":true
+         },
+         "infowindow":null,
+         "tooltip":null,
+         "id":"deb78e47-3dc3-417b-837d-5cdf200d8694",
+         "order":0,
+         "type":"tiled"
+      },
+      {  
+         "type":"layergroup",
+         "options":{  
+            "user_name":"uducla",
+            "maps_api_template":"http://{user}.carto.com:80",
+            "sql_api_template":"http://{user}.carto.com:80",
+            "tiler_protocol":"http",
+            "tiler_domain":"carto.com",
+            "tiler_port":"80",
+            "sql_api_protocol":"http",
+            "sql_api_domain":"carto.com",
+            "sql_api_endpoint":"/api/v2/sql",
+            "sql_api_port":80,
+            "filter":"mapnik",
+            "layer_definition":{  
+               "stat_tag":"664b2ba5-b804-4fd8-b734-c813d78242de",
+               "version":"1.0.1",
+               "layers":[  
+                  {  
+                     "id":"431d3c96-5ded-4bec-9474-3b3feead4c82",
+                     "type":"CartoDB",
+                     "infowindow":{  
+                        "template_name":"",
+                        "maxHeight":180,
+                        "template":"",
+                        "alternative_names":{  
+
+                        },
+                        "fields":null,
+                        "width":226
+                     },
+                     "tooltip":{  
+                        "template_name":"",
+                        "template":""
+                     },
+                     "legend":null,
+                     "order":1,
+                     "visible":true,
+                     "options":{  
+                        "layer_name":"Gentrified Areas",
+                        "cartocss":"#layer {\n  polygon-fill: ramp([gentrify], (#ffffff, #fcedb4, #3e7bb6, #229a00, #ff2900, #ffffff), (null, \"Vulnerable, Did Not Gentrify\", \"Gentrified 2000-2013 Only\", \"Gentrified 1990-2000 Only\", \"Gentrified Both Decades\", ), \"=\");\n  polygon-opacity: 0.7;\n}\n#layer::outline {\n  line-width: 1;\n  line-color: #FFFFFF;\n  line-opacity: 0;\n}",
+                        "cartocss_version":"2.1.1",
+                        "interactivity":"",
+                        "sql":"SELECT * FROM revised_gentri_merge",
+                        "table_name":"\"\"."
+                     }
+                  },
+                  {  
+                     "id":"4746ce42-462a-4b77-a9bc-85385d2303d6",
+                     "type":"CartoDB",
+                     "infowindow":{  
+                        "template_name":"",
+                        "fields":[  
+
+                        ],
+                        "maxHeight":180,
+                        "template":"<div class=\"cartodb-popup v2\"><a href=\"#close\" class=\"cartodb-popup-close-button close\">x</a> <div class=\"cartodb-popup-content-wrapper\"><div class=\"cartodb-popup-content\">{{name}}{{videoframe}}</div></div><div class=\"cartodb-popup-tip-container\"></div> </div>",
+                        "alternative_names":{  
+
+                        },
+                        "width":350
+                     },
+                     "tooltip":{  
+                        "fields":[  
+
+                        ],
+                        "template_name":"",
+                        "template":""
+                     },
+                     "legend":null,
+                     "order":2,
+                     "visible":true,
+                     "options":{  
+                        "layer_name":"Stories",
+                        "cartocss":"#layer {\n  marker-width: 40;\n  marker-fill: #9b40f4;\n  marker-fill-opacity: 0.9;\n  marker-file: url('https://s3.amazonaws.com/com.cartodb.users-assets.production/maki-icons/marker-18.svg');\n  marker-allow-overlap: true;\n  marker-line-width: 2;\n  marker-line-color: #FFFFFF;\n  marker-line-opacity: 1;\n}",
+                        "cartocss_version":"2.1.1",
+                        "interactivity":"cartodb_id",
+                        "sql":"SELECT * FROM prototype_data",
+                        "table_name":"\"\"."
+                     }
+                  }
+               ]
+            },
+            "attribution":""
+         }
+      },
+      {  
+         "options":{  
+            "type":"Tiled",
+            "subdomains":"abcd",
+            "minZoom":"0",
+            "maxZoom":"18",
+            "name":"Positron Labels",
+            "className":"positron_rainbow_labels",
+            "attribution":"&copy; <a href=\"http://www.openstreetmap.org/copyright\">OpenStreetMap</a> contributors",
+            "category":"CARTO",
+            "urlTemplate":"https://{s}.basemaps.cartocdn.com/rastertiles/light_only_labels/{z}/{x}/{y}.png",
+            "urlTemplate2x":"https://{s}.basemaps.cartocdn.com/rastertiles/light_only_labels/{z}/{x}/{y}@2x.png"
+         },
+         "infowindow":null,
+         "tooltip":null,
+         "id":"649fbb9d-f6ae-42b3-92c8-2e387397a705",
+         "order":3,
+         "type":"tiled"
+      }
+   ],
+   "overlays":[  
+      {  
+         "type":"share",
+         "order":2,
+         "options":{  
+            "display":true,
+            "x":20,
+            "y":20
+         },
+         "template":""
+      },
+      {  
+         "type":"loader",
+         "order":8,
+         "options":{  
+            "display":true,
+            "x":20,
+            "y":150
+         },
+         "template":"<div class=\"loader\" original-title=\"\"></div>"
+      },
+      {  
+         "type":"logo",
+         "order":9,
+         "options":{  
+            "display":true,
+            "x":10,
+            "y":40
+         },
+         "template":""
+      }
+   ],
+   "prev":null,
+   "next":null,
+   "transition_options":{  
+
+   }
+})
