@@ -24,48 +24,15 @@ html, body, #map {
 	padding: 0;
 }
 
-/* overrides default style for legends */ 
-#map .cartodb-legend-stack {
-	right: 30px;
-	border-color: #ccc;
-	box-shadow: none;
-	/* width: 280px; */
-}
-#map .cartodb-legend-stack .cartodb-legend .legend-title {
-	font-family: 'Open Sans', sans-serif;
-	color: #043361;
-	font-size: 12px;
-	font-weight: bold;
-	text-transform: none;
-}
-#map .cartodb-legend-stack .cartodb-legend li {
-	font-family: 'Open Sans', sans-serif;
-	color: black;
-	font-size: 12px;
-	font-weight: normal;
-	text-transform: none;
-}
-#map .cartodb-legend-stack .cartodb-legend li .bullet {
-	height: 10px;
-	width: 10px;
-}
-#map div.cartodb-legend-stack div.cartodb-legend li.min {
-	float: left;
-	width: 20%;
-	text-align: center;
-}
-#map div.cartodb-legend-stack div.cartodb-legend li.median {
-	float: left;
-	width: 60%;
-	text-align: center;
-}
-#map div.cartodb-legend-stack div.cartodb-legend li.max {
-	float: right;
-	width: 20%;
-	text-align: center;
+div.cartodb-legend .legend-title {
+	color: #444 !important;
 }
 
-/* overrides default style for tooltips */
+div.cartodb-legend.category ul li, div.cartodb-legend.color ul li, div.cartodb-legend.custom ul li {
+	color: #444 !important;
+	font-weight: 100 !important;
+}
+
 #map .cartodb-tooltip-content {
 	padding: 6px;
 }
@@ -78,51 +45,78 @@ html, body, #map {
 	font-size: 12px;
 }
 
-.cartodb-popup .cartodb-popup-content {
+#map .cartodb-popup .cartodb-popup-content {
 	max-height: none !important;
 	height: 100% !important;
 }
 
-.cartodb-infowindow {
+#map .cartodb-infowindow {
 	width: 48% !important;
+	min-width: 330px !important;
 	height: 70vh !important;
+	z-index: 120 !important;
 }
 
-.cartodb-popup.v2 {
+#map .cartodb-popup.v2 {
 	width: calc(100% - 20px) !important;
 	height: calc(100% - 20px) !important;
 }
 
-.cartodb-popup-content-wrapper {
+#map .cartodb-popup-content-wrapper {
 	height: calc(100% - 20px) !important;
 }
 
-.cartodb-searchbox {
+div.cartodb-popup .jspPane {
+	padding-bottom: 50px !important;
+}
+
+#map .cartodb-searchbox {
+	position: absolute !important;
 	float: left !important;
 	margin: 10px 0 0 60px !important;
 	border: none !important;
+	box-shadow: 0 1px 5px rgba(0,0,0,.65) !important;
 }
 
-.cartodb-layer-selector-box {
+#map .cartodb-layer-selector-box {
 	position: absolute !important;
 	float: left !important;
 	margin: 50px 0 0 60px !important;
 	border: none !important;
+	box-shadow: 0 1px 5px rgba(0,0,0,.65) !important;
+	z-index: 100 !important;
 }
 
-.leaflet-bar a, .leaflet-bar a:hover {
+div.cartodb-legend {
+	border: none !important;
+	box-shadow: 0 1px 5px rgba(0,0,0,.65) !important;
+}
+
+#map .leaflet-top {
+	z-index: 100 !important;
+}
+
+#map .leaflet-bar a, .leaflet-bar a:hover {
     width: 33.5px !important;
     height: 33.5px !important;
     line-height: 33.5px !important;
 }
 
-.resp-container {
+#map .resp-container {
     position: relative;
-    overflow: hidden;
+    overflow: hidden; 
     padding-top: calc(56.25% + 60px);
+    margin-bottom: -60px;
 }
 
-.resp-iframe {
+#map .audio-container {
+    position: relative;
+    overflow: hidden; 
+    padding-top: 120px;
+    margin-bottom: -60px;
+}
+
+#map .resp-iframe {
     position: absolute;
     top: 0;
     left: 0;
@@ -131,19 +125,8 @@ html, body, #map {
     border: 0;
 }
 
-/* 
-.cartodb-popup-content-wrapper {
-	width: 100% !important;
-	height: 100% !important; 
-}
-
-.cartodb-popup-content.jspScrollable {
-	width: 100% !important;
-	height: 100% !important;
-}
-
-.jspContainer {
-	height: 100% !important;
+.header-remove {
+	margin-top: -60px !important;
 }
 
 /* overrides default style for zoom icons */

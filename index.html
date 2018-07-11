@@ -30,19 +30,27 @@
   
 <div id="map"></div>
 
-<!-- name	textshort	textlong	lat	lng	photo1cap	photo1url	photo2cap	photo2url	photo3cap	photo3url	videocap	videourl	videoframe	audiocap	audiourl --> 
+<!-- name	address	textshort	textlong	lat	lng	photo1cap	photo1url	photo2cap	photo2url	photo3cap	photo3url	videocap	videourl	videoframe	audiocap	audiourl	audioframe	photoreelcap	photoreelurl	photoreelframe	singlephotocap	singlephotourl	singlephotoframe --> 
 
 <script type="infowindow/html" id="infowindow_template">
 	<div class="cartodb-popup v2">
 	  <a href="#close" class="cartodb-popup-close-button close">x</a>
 		  <div class="cartodb-popup-content-wrapper">
 		    <div class="cartodb-popup-content">
-		    	<h3> {{name}} </h3>
+		    	<h2> {{name}} </h2> 
+		    	<h3> {{address}} </h3>
+		    		<hr style="height:0px; visibility:hidden;" />
 		    	<p> {{textlong}} </p>
-		    	
-		    	  <div class="resp-container">
-    				<iframe class="resp-iframe" src="{{videourl}}" gesture="media"  allow="encrypted-media" allowfullscreen></iframe>
-					</div> 
+		    		<hr style="height:0px; visibility:hidden;" />
+	  		 	{{{videoframe}}}
+				<em> {{videocap}} </em> <br>
+					<hr style="height:0px; visibility:hidden;" /> 
+				{{{audioframe}}}
+				<em> {{audiocap}} </em> <br>
+					<hr style="height:0px; visibility:hidden;" />
+				{{{photoreelframe}}}
+					<hr style="height:0px; visibility:hidden;" />
+					<hr style="height:0px; visibility:hidden;" />
 		    </div>
 		  </div>
 	  <div class="cartodb-popup-tip-container"></div>
@@ -57,6 +65,23 @@
 		</div>
 	</div>
 </script>
+
+<div class="cartodb-legend color">
+  <div class="legend-title">Gentrification in LA</div>
+  <ul class="legend-list">
+    <li><div class="bullet" style="background-color: #fcedb4;"></div> Vulnerable, did not gentrify</li>
+    <li><div class="bullet" style="background-color: #3e7bb6;"></div> Gentrified 2000-2013 only</li>
+    <li><div class="bullet" style="background-color: #229a00;"></div> Gentrified 1990-2000 only</li>
+    <li><div class="bullet" style="background-color: #ff2900;"></div> Gentrified both decades</li>
+    	<hr style="height:0px; visibility:hidden;" />
+    <li><div class="bullet" style="background-color: #9b40f4;"></div><em style="font-weight:400;"> Personal Narratives</em></li>
+  </ul>
+  <!-- 
+  <div class="legend-title">Personal Narratives</div>
+  <ul class="legend-list">
+    <li><div class="bullet" style="background-color: #9b40f4;"></div></li>
+  </ul> -->
+</div> 
 
 <script src="map.js"></script>
 
