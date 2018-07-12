@@ -51,19 +51,20 @@ div.cartodb-legend.category ul li, div.cartodb-legend.color ul li, div.cartodb-l
 }
 
 #map .cartodb-infowindow {
-	width: 48% !important;
+	width: 50% !important;
 	min-width: 330px !important;
 	height: 70vh !important;
 	z-index: 120 !important;
 }
 
 #map .cartodb-popup.v2 {
-	width: calc(100% - 20px) !important;
+	width: 100% !important;
 	height: calc(100% - 20px) !important;
 }
 
 #map .cartodb-popup-content-wrapper {
 	height: calc(100% - 20px) !important;
+	padding: 12px 19px 12px 19px;
 }
 
 div.cartodb-popup .jspPane {

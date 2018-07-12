@@ -26,7 +26,6 @@ $(document).ready(function () {
             sublayer.infowindow.set('sanitizeTemplate',false);
             sublayer.infowindow.set('template', $('#infowindow_template').html());
 
-
             // Set tooltip
             vis.addOverlay({
                   type: 'tooltip',
@@ -39,12 +38,20 @@ $(document).ready(function () {
             // Set map pan on point click
             sublayer.on('featureClick', function(e, latlng, pos, data, layerNumber) {
                 map.panTo(latlng);
+                $('.cartodb-legend').hide();
+                console.log("hidden");
             })
 
         }).on('error', function() {
             console.log("some error occurred");
     });
 });
+
+function popupclose() {
+    $('.cartodb-legend').show();
+    $('iframe').attr('src', $('iframe').attr('src'));
+}
+
 
 
 

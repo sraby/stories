@@ -34,10 +34,10 @@
 
 <script type="infowindow/html" id="infowindow_template">
 	<div class="cartodb-popup v2">
-	  <a href="#close" class="cartodb-popup-close-button close">x</a>
+	  <a href="#close" class="cartodb-popup-close-button close" onclick="popupclose();">x</a>
 		  <div class="cartodb-popup-content-wrapper">
 		    <div class="cartodb-popup-content">
-		    	<h2> {{name}} </h2> 
+		    	<h2 style="color: #9b40f4;"> {{name}} </h2> 
 		    	<h3> {{address}} </h3>
 		    		<hr style="height:0px; visibility:hidden;" />
 		    	<p> {{textlong}} </p>
@@ -60,7 +60,7 @@
 <script type="infowindow/html" id="hover_template">
 	<div class="cartodb-tooltip-content-wrapper">
 		<div class="cartodb-tooltip-content">
-			<h3>{{name}}</h3>
+			<h3 style="color: #9b40f4;">{{name}}</h3>
 			<p>{{textshort}}</p>
 		</div>
 	</div>
